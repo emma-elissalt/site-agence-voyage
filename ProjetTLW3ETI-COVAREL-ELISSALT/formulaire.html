@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="PremierePage.css">
+        <link rel="icon" href="image/logo.jpg" type="image/gif" sizes="20x20">
+        <meta charset ="UTF-8">
+        <title> African Travellers </title>
+    </head>
+	
+<body onload=initialisationFormulaire()>
+	<!-- Début partie entête -->
+	<div class="grid_4">
+		<div class="col_1_row_1"> <img src="image/logo.jpg" height="200" width="200"/> </div>
+		<div class="col_2a4_row_1"> <h1>African Travellers</h1></div>
+		<div class="col_4_row_1">   
+			<form class="formLogin" method="POST" onsubmit="return validerLogin()">
+				<fieldset id="demandeLogin" >
+					<legend>Login</legend>
+					<p> <label for="Login : ">Nom* : </label> <input type="text" name="login" id="IDlogin" required/> </p>
+					<p> <label for="pass : ">Mot de passe* : </label> <input type="PASSWORD" name="pass" id="IDpass" required/> </p>
+					<p> <input type="submit" value="Login"> </p>
+				</fieldset>
+				<fieldset hidden="true" id="loginOK">
+					<legend>Bienvenue</legend>
+					<p> <h3 id="legendeBienvenue">nom de l'utilisateur loggé</h3></p>
+				</fieldset>
+			</form>
+		  </div>
+	</div> 
+	<div class="grid_bandeau">
+		<div class="col_1_row_1 border"> <a id="lienPrincipal" href="PremierePage.html"> <h2>Page Principal</h2></a></div>
+		<div class="col_2_row_1 border"> <a id="lienCarte" href="carte.html"> <h2>Cartes</h2></a></div>
+		<div class="col_3_row_1 border"> <a id="lienReservation" href=#> <h2>Réservation</h2></a></div>
+		<div class="col_4_row_1 border"> <a href="contact.html"> <h2>Contacts</h2></a></div>
+  	</div>
+    <!-- Fin partie entête -->
+
+	<br></br>
+	<form class="styleFormulaire" name="formulaire" id="formulaire" action="recapitulatif.html" method="GET" >
+		<p>Veuillez remplir le formulaire ci-dessous:</p>
+		<p><h1>Réservation pour un voyage à 
+			<SELECT id="Choix" name="Choix" onChange="calculerAvecElementsPage()">		
+				<option value="0">Le Caire</option>
+				<option value="1">Casablanca</option>
+				<option value="2">Johannesburg</option>
+				<option value="3">Madagascar</option>
+				<option value="4">Zimbabwe</option>
+				<option value="5">Tanzanie</option>
+			</SELECT>
+		</h1></p>	
+		<p> 
+			<label for="nom">Nom* : </label> <input type="text" id="nom" name="nom" required/> 
+		</p>
+		<p> 
+			<label for="prenom">Prénom* : </label> <input type="text" id="prenom" name="prenom" required/> 
+		</p>
+		<p> 
+			<label for="email">Adresse mail* :</label> <input type="e-mail" id="email" required/> 
+		</p>
+		<p> 
+			<label for="telephone">Numéro de téléphone :</label> <input type="tel" id="telephone"> 
+		</p>
+		<p> 	
+			<label for="datedepart">Date de départ* :</label>
+			<input type="date" id="datedepart" name="datedepart" onchange="calculerAvecElementsPage()" required/> 
+		</p>
+		<p> 
+			<label for="dateretour">Date de retour* :</label>
+			<input type="date" id="dateretour"  name="dateretour" onchange="calculerAvecElementsPage()" required/> 
+		</p>
+		<p> 
+			<label for="nbadultes">Nombre d'adultes* :</label>
+			<input type="number" id="nbadultes" min="1" max="100" name="nbadultes" onchange="calculerAvecElementsPage()" value=1 required/>
+		</p>
+		<p> 	
+			<label for="nbenfants">Nombre d'enfants (-12 ans) * :</label>
+			<input type="number" id="nbenfants" min="0" max="100" name="nbenfants" onchange="calculerAvecElementsPage()" value=0 required/>
+		</p>
+		<p> 
+			<label for="animal">Animal de compagnie ? *: </label>
+			<input type="radio" id="inputAnimal1" name="animal" value="Oui"  onchange="calculerAvecElementsPage()" required/>
+			<label for="animalOui" id="legendeRadio">Oui</label>
+			<input type="radio" id="inputAnimal2" name="animal" value="Non"  onchange="calculerAvecElementsPage()" checked required/>
+			<label for="animalNon" id="legendeRadio">Non</label>
+		</p>
+		<p>
+			<label for="classes">voyager en classe* : </label>
+			<input type="radio" name="classe" id="inputClasse1" value="eco" onchange="calculerAvecElementsPage()" checked required/> 
+			<label for="classeco"  id="legendeRadio">Eco</label>
+			<input type="radio" name="classe" id="inputClasse2" value="classique" onchange="calculerAvecElementsPage()" required/> 
+			<label for="classclass" id="legendeRadio">Classique</label>
+			<input type="radio" name="classe" id="inputClasse3" value="premium" onchange="calculerAvecElementsPage()" required/> 
+			<label for="classpremi" id="legendeRadio">Premium</label>
+		</p>
+		<p>	
+			<label for="petitdej">Petit-déjeuner ? * : </label>
+			<input type="radio" name="petitdej" id="inputRadioDej1" value="Oui"  onchange="calculerAvecElementsPage()" checked required/> 
+			<label for="petitdej" id="legendeRadio">Oui</label>
+			<input type="radio" name="petitdej" id="inputRadioDej2" value="Non"  onchange="calculerAvecElementsPage()" required/> 
+			<label for="petitdej" id="legendeRadio">Non</label>
+		</p>
+		<p>
+			<label for="renseignement">Souhaitez-vous ajouter un renseignement? :</label>
+			<textarea id="message"></textarea>
+		</p>
+		<p>
+			<label for="prix">Le montant total est de : </label>
+			<label for="maj" id="prix">___________</label>
+		</p>	
+		<p>*:champs obligatoires</p>
+		<p style="text-align: center;">
+			<button type=button onclick="resetFormulaire()">
+				<img src="image/poubelle.png" width="50" heigth="50">
+			</button>
+			<button type=submit >
+				<img src="image/confirmer.png" width="50" heigth="50">
+			</button>
+		</p>
+	</form>
+	<br></br>
+
+	<!-- Début de la partie pied de page -->
+	<div class="piedpage">
+    	<div>
+        	<a href="PremierePage.html"> <img src="image/home.png" height="30" width="30"></a> 
+        	<a href="contact.html"> <img src="image/contact.png" height="30" width="30"></a>
+    	</div>
+	</div> 
+	<!-- Fin de la partie pied de page -->
+
+<!-- Affichage du bouton pour remonter en début de page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<div id="toTop"><i class="fa fa-arrow-up"></i></div>
+
+<!-- Insertion de la page js -->
+<script src="PremierePage.js"></script>
+</body>
+</html> 

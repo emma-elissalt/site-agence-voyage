@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="PremierePage.css">
+        <link rel="icon" href="image/logo.jpg" type="image/gif" sizes="20x20">
+        <meta charset ="UTF-8">
+        <title> African Travellers </title>
+    </head>
+	
+<body onload=initialisationPremierePage()> 
+	<!-- Début partie entête -->
+	<div class="grid_4">
+		<div class="col_1_row_1"> <img src="image/logo.jpg" height="200" width="200"/> </div>
+		<div class="col_2a4_row_1"> <h1>African Travellers</h1></div>
+		<div class="col_4_row_1">   
+			<form class="formLogin" method="POST" onsubmit="return validerLogin()">
+				<fieldset id="demandeLogin" >
+					<legend>Login</legend>
+					<p> <label for="Login : ">Nom* : </label> <input type="text" name="login" id="IDlogin" required/> </p>
+					<p> <label for="pass : ">Mot de passe* : </label> <input type="PASSWORD" name="pass" id="IDpass" required/> </p>
+					<p> <input type="submit" value="Login"> </p>
+				</fieldset>
+				<fieldset hidden="true" id="loginOK">
+					<legend>Bienvenue</legend>
+					<p> <h3 id="legendeBienvenue">nom de l'utilisateur loggé</h3></p>
+				</fieldset>
+			</form>
+		  </div>
+	</div> 
+	<div class="grid_bandeau">
+		<div class="col_1_row_1 border"> <a id="lienPrincipal" href="PremierePage.html"> <h2>Page Principal</h2></a></div>
+		<div class="col_2_row_1 border"> <a id="lienCarte" href="carte.html"> <h2>Cartes</h2></a></div>
+		<div class="col_3_row_1 border"> <a id="lienReservation" href=#> <h2>Réservation</h2></a></div>
+		<div class="col_4_row_1 border"> <a href="contact.html"> <h2>Contacts</h2></a></div>
+  	</div>
+	<!-- Fin partie entête -->
+	
+<!-- Formulaire de filtrage -->
+<button class="bandeauOrange" onclick="activeFiltrage()">Filtrer</button>
+<form hidden=True class="formulaireFiltrage" name="filtrage" id="filtrage" action="" method="POST" >
+<p> 
+    <label for="prixMax">Prix maximum par jour (€) :</label>
+    <input type="text" id="prixMax" name="prixMax" onchange="majImage()" value=0 />
+    <label for="nbadultes">Nombre d'adultes :</label>
+    <input type="number" id="nbadultes" min="1" max="100" name="nbadultes" onchange="majImage()" value=1/>
+    <label for="nbenfants">Nombre d'enfants (-12 ans) :</label>
+    <input type="number" id="nbenfants" min="0" max="100" name="nbenfants" onchange="majImage()" value=0/>
+</p>
+</form>
+    
+    
+<br></br>  
+<div class="texteGrosCentre">
+    Envie de voyager ? Notre agence vous propose une vaste sélection de destinations à travers l'Afrique.<br/>
+   N'attendez plus pour partir.
+</div><br></br>
+  
+<div id="images">
+</div>   
+
+<!-- Début de la partie pied de page -->
+<div id="ppage" class="piedpage">
+  <div>
+      <a href="PremierePage.html"> <img src="image/home.png" height="30" width="30"></a> 
+      <a href="contact.html"> <img src="image/contact.png" height="30" width="30"></a>
+  </div>
+</div> 
+<!-- Fin de la partie pied de page -->
+
+<!-- Affichage du bouton pour remonter en début de page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<div id="toTop"><i class="fa fa-arrow-up"></i></div>
+
+<!-- Insertion de la page js -->
+<script src="PremierePage.js"></script>
+</body>
+</html>

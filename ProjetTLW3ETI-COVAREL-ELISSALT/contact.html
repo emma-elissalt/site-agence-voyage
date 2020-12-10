@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="PremierePage.css">
+        <link rel="icon" href="image/logo.jpg" type="image/gif" sizes="20x20">
+        <meta charset ="UTF-8">
+        <title> African Travellers </title>
+    </head>
+    
+<body onload=initialisation()>  
+    <!-- Début partie entête -->    
+    <div class="grid_4">
+		<div class="col_1_row_1"> <img src="image/logo.jpg" height="200" width="200"/> </div>
+		<div class="col_2a4_row_1"> <h1>African Travellers</h1></div>
+		<div class="col_4_row_1">   
+			<form class="formLogin" method="POST" onsubmit="return validerLogin()">
+				<fieldset id="demandeLogin" >
+					<legend>Login</legend>
+					<p> <label for="Login : ">Nom* : </label> <input type="text" name="login" id="IDlogin" required/> </p>
+					<p> <label for="pass : ">Mot de passe* : </label> <input type="PASSWORD" name="pass" id="IDpass" required/> </p>
+					<p> <input type="submit" value="Login"> </p>
+				</fieldset>
+				<fieldset hidden="true" id="loginOK">
+					<legend>Bienvenue</legend>
+					<p> <h3 id="legendeBienvenue">nom de l'utilisateur loggé</h3></p>
+				</fieldset>
+			</form>
+		  </div>
+	</div> 
+	<div class="grid_bandeau">
+		<div class="col_1_row_1 border"> <a id="lienPrincipal" href="PremierePage.html"> <h2>Page Principal</h2></a></div>
+		<div class="col_2_row_1 border"> <a id="lienCarte" href="carte.html"> <h2>Cartes</h2></a></div>
+		<div class="col_3_row_1 border"> <a id="lienReservation" href=#> <h2>Réservation</h2></a></div>
+		<div class="col_4_row_1 border"> <a href="contact.html"> <h2>Contacts</h2></a></div>
+    </div>
+    <!-- Fin partie entête -->
+    
+    <br/>
+    <div class="apropos">
+        <h4>Vous pouvez nous contacter pour tout renseignement : </h4>
+        <br/>
+        <p>Adresse postale: 23 Av.des Champs-Elysées, 75008 Paris</p>
+        <br/>
+        <div class="iframe_maps">
+            <iframe height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.41962905694!2d2.305704015017979!3d48.86927650789521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4f426c0bf%3A0xbb394f1ac2758870!2s23%20Av.%20des%20Champs-%C3%89lys%C3%A9es%2C%2075008%20Paris!5e0!3m2!1sfr!2sfr!4v1601974269958!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <br/>
+        <br/>
+        <div class="grid_3">
+            <div class="col_1_row_1">
+                <p>Horaire d'ouverture:</p>
+            </div>
+            <div class="col_2_row_1">
+                <p>Mardi: 9h-12h / 14h-18h <br/> Mercerdi : 9h-12h / 14h-18h <br/> Jeudi : 9h-12h / 14h-18h <br/> Vendredi : 9h-12h / 14h-18h <br/> Samedi : 10h-15h <br/> Fermée les lundis, dimanches et jour fériés.</p>
+            </div>
+        </div>
+        <br/>
+        <p>Numéro de téléphone: <a href="tel:0123456789">01 23 45 67 89</a> </p>
+        <br/>
+        <p>Adresse mail: <a href="mailto:africantravellers@gmail.com?subject=Demande de renseignements&body=Bonjour, je souhaiterais obtenir des renseignements sur">africantravellers@gmail.com</a> </p>
+    </div> 
+    
+    <br/>
+    <div class="apropos">
+        <h4>A propos ...</h4> 
+        <br/>
+        <p> 
+            Notre Histoire c'est avant tout une histoire de famille quand en 2007 un couple de Bruxellois tombe sous le charme de l’Afrique et décide de poser ses valises dans les réserves bordant le célèbre Parc Kruger. Rapidement l'envie de partager leur passion pour ce continent s'est imposée avec la création de African Travellers, une agence de voyage locale et francophone.            
+            En tant qu'agence réceptive en Afrique, l’Afrique Australe est notre terre d’adoption mais aussi une passion que l’on partage avec amour depuis près de 15 ans avec nos voyageurs.
+            Depuis et chaque jour, nos rangers travaillent à proposer une expérience unique à nos voyageurs en anticipant leurs besoins, dénichant de nouveaux endroits insolites et s’assurant de la qualité de nos prestataires.
+            Désormais spécialisée dans les voyages sur-mesure en Afrique, on vous fait découvrir l’Afrique telle que l’on aurait aimé la découvrir : hors des sentiers battus, authentique et riche en aventures.
+            Plus de 6 000 clients ont fait confiance à African Travellers depuis 2007. 
+        </p>
+    </div>
+    <br/>
+
+    <!-- Affichage du bas de page-->
+    <div class="piedpage">
+        <div>
+            <a href="PremierePage.html"> <img src="image/home.png" height="30" width="30"></a> 
+            <a href="contact.html"> <img src="image/contact.png" height="30" width="30"></a>
+        </div>
+    </div> 
+    <!-- Fin de la partie pied de page -->
+
+<!-- Affichage du bouton pour remonter en début de page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<div id="toTop"><i class="fa fa-arrow-up"></i></div>
+
+<!-- Insertion de la page js -->
+<script src="PremierePage.js"></script>
+</body>
+</html>

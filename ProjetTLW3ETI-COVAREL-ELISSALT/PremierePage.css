@@ -1,0 +1,403 @@
+/*Défaut pour tous les éléments*/
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: Avenir, sans-serif;
+}
+
+h4 {
+  color:white
+}
+
+/* Une classe pour avoir un certain style d'écriture*/
+.texteGrosCentre {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  }
+
+p {
+  color: white;
+}
+
+[required] {
+  border: 2px dotted orange;
+}
+
+body {
+    background-color: rgb(12, 12, 12) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+title{
+    color: brown;
+    text-align: center;
+    font-size: 100px;
+}
+
+/* Entete à toute les pages */
+/* une classe avec un grid à 4 colonnes */
+.grid_4
+{
+  background-color: white;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% 30% auto 300px; 
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  width: 100%;
+}
+
+/* Pour les h1 de la classe grid_4 */
+.grid_4 h1{
+  position: absolute;
+  bottom: 0;
+  margin: 1em auto;
+  width: 100%;
+  color: black;
+}
+
+.border{
+  border: 2px solid #999;
+  padding: 10px;
+}  
+
+/* Classes pour definir les lignes et les colonnes du grid */
+.col_1_row_1 {
+  grid-column: 1;
+  grid-row: 1;
+  }
+
+.col_2_row_1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.col_3_row_1 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.col_4_row_1 {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.grid_bandeau
+{
+  background-color: white;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%; 
+  grid-gap: 10px;
+  grid-auto-rows: minmax(30px, auto);
+  width: 100%;
+}
+.col_2a4_row_1 {
+  grid-column: 2/4 ;
+  grid-row: 1;
+  position: relative;
+}
+
+/* Partie LOGIN */
+.formLogin {
+  width: 260px;
+  margin: 0 auto;
+}
+.formLogin p{
+   margin-top: 5px;
+}
+.formLogin fieldset {
+  padding: 5px;
+}
+.formLogin label{
+  /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  color: black;
+}
+.formLogin input {
+  /* Pour s'assurer que tous les champs textes aient la même dimension */
+  width: 100px;
+  box-sizing:  border-box;
+  /* Pour harmoniser les bords*/
+  border: 1px solid #999
+}
+.formLogin button{
+  /* Pour harmoniser la taille avec les champs de saisie */
+  width: 80px;
+}
+/* Fin LOGIN*/
+
+/* Fin entête */
+
+/* style du pied de page */
+.piedpage {
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto;
+  }
+/* Fin pied de page */
+
+/* style qui s'applique pour le bouton aller au début de la page */
+#toTop {
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  cursor:pointer;
+  background: rgba(000,000,000,0.7);
+  width:50px;
+  font-size:25px;
+  line-height:45px;
+  color:chocolate;
+  text-align:center;
+  border-radius:50px;
+  height:50px;
+ }
+/* Fin style boutton retour vers le haut */
+
+/* Mise en forme des images */
+
+.container {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  box-sizing:  border-box;
+  border: 2px solid #999;
+  z-index: 0;
+  }
+
+.container .text {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 30%;
+  color: white;
+  width: 70%;
+}
+
+/* Fin images */
+
+/* Mise en forme du formulaire */
+
+.styleFormulaire {
+  /*uniquement centre le formulaire sur la page */
+  margin: 0 auto;
+  width: 600px;
+  /* Encadré pour voir les limites du formulaire */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+.styleFormulaire p{
+  margin-top: 1em;
+}
+
+.styleFormulaire label{
+  /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+  display: inline-block;
+  width: 250px;
+  text-align: right;
+}
+
+.styleFormulaire input, textarea {
+  /* Pour s'assurer que tous les champs texte ont la même police */
+  font: 1em sans-serif;
+  /* Pour s'assurer que tous les champs textes aient la même dimension */
+  width: 300px;
+  box-sizing:  border-box;
+  /* Pour harmoniser les bords*/
+  border: 1px solid #999
+}
+
+.styleFormulaire input:focus, textarea:focus {
+  /* Pour souligner légérement les éléments actifs */
+  border-color: #FFF;
+}
+
+.styleFormulaire input[type="radio"] {
+  width: 20px;
+}
+
+.styleFormulaire textarea {
+  /* Pour aligner les champs texte multi-ligne avec leur étiquette */
+  vertical-align: top;
+  /*Place pour écrire */
+  height: 100px;
+}
+
+.styleFormulaire button{
+  background:black;
+}
+
+.styleFormulaire SELECT{
+  font: 1em sans-serif;
+}
+
+.styleFormulaire h1 {
+  font: 1em sans-serif;
+  color: white;
+  text-align: left;
+}
+ /* fin FORMULAIRE */
+
+/* Partie page RECAPITULATIF */
+.formRecapitulatif {
+  width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid rgb(161, 167, 150);
+  border-radius: 30px;
+}
+
+.formRecapitulatif h1{
+  color: white;
+}
+
+.formRecapitulatif p{
+   margin-top: 5px;
+}
+
+.formRecapitulatif fieldset {
+  padding: 5px;
+}
+
+.formRecapitulatif label{
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  color: white;
+}
+.formRecapitulatif button{
+  background:black;
+}
+/* Fin RECAPITULATIF*/
+
+
+/* partie page carte */
+
+.svg-container { 
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  vertical-align: middle; 
+}
+
+.iframeVideo {
+  position: absolute;
+  top: 400px;
+  left: 100px;
+}
+
+/* FIN partie carte */
+
+/* Filtre partie PREMIERE PAGE */
+.bandeauOrange
+{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(210, 105, 30);
+  position: sticky;
+  top: 0px;
+  text-decoration: none;
+  color: rgb(17, 17, 17);
+  border-bottom: 2px solid transparent;
+  padding: 10px 0px;
+}
+
+.formulaireFiltrage {
+  /*uniquement centre le formulaire sur la page */
+  margin: 0 auto;
+  width: auto;
+  /* Encadré pour voir les limites du formulaire */
+  padding: 1em;
+  background-color: rgb(210, 105, 30);
+}
+
+.formulaireFiltrage p{
+  margin-top: 1em;
+}
+
+.formulaireFiltrage label{
+  /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+  display: inline-block;
+  width: 250px;  
+  text-align: right;
+}
+
+.formulaireFiltrage input{
+  /* Pour s'assurer que tous les champs texte ont la même police */
+  font: 1em sans-serif;
+  /* Pour s'assurer que tous les champs textes aient la même dimension */
+  width: 100px;
+  box-sizing:  border-box;
+  /* Pour harmoniser les bords*/
+  border: 1px solid #999
+}
+
+.conteneur{
+margin: 50px 20px;
+height: 1500px;
+}
+
+#legendeRadio {
+  width: auto;
+  text-align: left;
+  padding-right: 10px;
+}
+
+#prix {
+  text-align: center;
+}
+
+#maj {
+  text-align: left;
+  background-color: white ;
+}
+
+/* fin partie FILTRE */
+
+/* Début partie page CONTACT */
+.apropos {
+  text-align: justify;
+  margin: 0 auto;
+  width: 900px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+.ouverture { 
+  display: block;
+  margin: 0% 0% 0% 20%;
+  text-align: left; 
+}
+
+.iframe_maps {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.grid_3
+{
+  text-align: left;
+  display: grid;
+  grid-template-columns: 20% auto 20%; 
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  width: 100%;
+}
+
+/* Fin partie page CONTACT */
